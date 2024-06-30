@@ -29,8 +29,20 @@ namespace FuiEditor.Forms
         public MainWindow()
         {
             InitializeComponent();
+            string[] args = Environment.GetCommandLineArgs();
+            if (args.Length > 1)
+            {
+                string filepath = args[1];
+                if (File.Exists(filepath))
+                {
+                    OpenFui(filepath);
+                }
+                else
+                {
+                    MessageBox.Show($"The file {filepath} does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
-
         private void OnClickFileOpen(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
