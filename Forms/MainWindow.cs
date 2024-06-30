@@ -39,6 +39,7 @@ namespace FuiEditor.Forms
                 }
                 else
                 {
+
                     MessageBox.Show($"The file {filepath} does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
